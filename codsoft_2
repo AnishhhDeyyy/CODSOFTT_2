@@ -1,0 +1,35 @@
+public class StudentGradeCalculator {
+    public static void main(String[] args) {
+        System.out.println("STUDENT GRADE CALCULATOR");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter total no of subjects");
+        int totalsub = sc.nextInt();
+        String grade = new String();
+        int totalmarks = 0;
+        boolean b =false;
+        for(int i=1;i<=totalsub;i++){
+            System.out.println("Enter the marks of" +i+ "-subject");
+            int marks = sc.nextInt();
+            totalmarks = totalmarks+marks;
+        }
+        int avgMarks = totalmarks/totalsub;
+        if(avgMarks>=90 && avgMarks<=100){
+            grade = "A";
+        } else if (avgMarks>=60 && avgMarks<=89) {
+            grade = "B";
+        } else if (avgMarks>=40 && avgMarks<=59) {
+            grade = "C";
+        }else {
+            grade = "You are not qualified";
+            b=true;
+        }
+        System.out.println("Total Marks"+" "+totalmarks);
+        System.out.println("Average Percentage"+" "+avgMarks);
+        if(b==true){
+            System.out.println(grade);
+        }else {
+            System.out.println("Your grade is" +" "+ grade);
+            System.out.println("congratulation!! You are qualified for next class");
+        }
+    }
+}
